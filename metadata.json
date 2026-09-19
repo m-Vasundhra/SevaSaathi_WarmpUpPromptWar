@@ -1,0 +1,6 @@
+{
+  "name": "SevaSaathi",
+  "description": "Your universal AI browser assistant that understands the webpage you are on and guides you step-by-step to get things done online.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

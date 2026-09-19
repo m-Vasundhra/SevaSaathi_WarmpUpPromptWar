@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom spotlight and guided highlight animations */
+@keyframes ai-pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4), 0 0 0 1px rgba(79, 70, 229, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(79, 70, 229, 0), 0 0 0 2px rgba(79, 70, 229, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0), 0 0 0 1px rgba(79, 70, 229, 0.6);
+  }
+}
+
+@keyframes ai-beacon {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.ai-highlight-target {
+  animation: ai-pulse-ring 2s infinite ease-in-out;
+  position: relative;
+  z-index: 20;
+}
+
+.ai-pulse-badge {
+  animation: ai-beacon 2.5s infinite ease-in-out;
+}
+
+/* High contrast mode overrides */
+body.high-contrast {
+  --tw-bg-opacity: 1;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.high-contrast * {
+  border-color: #555555 !important;
+}
+
+body.high-contrast .bg-white {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+body.large-text {
+  font-size: 1.125rem;
+}
+
+body.reduced-motion *,
+body.reduced-motion *::before,
+body.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
